@@ -1,12 +1,12 @@
 ![IPAPatch Logo](http://wx1.sinaimg.cn/large/bebedbb5ly1fdrgg0v1hjj20e205qdgi.jpg)
 
-IPAPatch provide a simple way to patch iOS Apps, without needing to jailbreak.
+IPAPatch-Swift provide a simple way to patch iOS Apps, without needing to jailbreak.
 
 [ [Features](#features) &bull; [Instructions](#instructions) &bull; [Example](#example) &bull; [FAQ](#faq) &bull; [License](#license) ]
 
 ## Features
 
-**IPAPatch** includes an template Xcode project, that provides following features:
+**IPAPatch-Swift** includes a template Xcode project, that provides following features:
 
 - **Build & Run third-party ipa with your code injected**
 
@@ -40,7 +40,7 @@ IPAPatch provide a simple way to patch iOS Apps, without needing to jailbreak.
 
 - **Generate distributable .ipa files**
 
-  You can distribute your patch/work to your friends very easily, with IPAPatch generated modified version of .ipa files
+  You can distribute your patch/work to your friends very easily, with IPAPatch-Swift generated modified version of .ipa files
 
     > *Modified version of Facebook.ipa created by IPAPatch*
     >
@@ -78,9 +78,10 @@ IPAPatch provide a simple way to patch iOS Apps, without needing to jailbreak.
 
    - Open `IPAPatch.xcodeproj`
    - In the Project Editor, Select Target `IPAPatch-DummyApp`
-   - `Display Name` defaults to "💊", this is used as prefix of the final display name.
-   - Change `Bundle Identifier` to match your provisioning profiles
-   - Fix signing issues if any.
+   - `Display Name` defaults to "NewName", change it to whatever you want
+   - Change `Bundle Identifier` to something unique
+   - Select a signing team
+   - Fix any signing issues if any
 
 6. **Configure IPPatch Options**
 
@@ -88,13 +89,13 @@ IPAPatch provide a simple way to patch iOS Apps, without needing to jailbreak.
    
         | Name | Description | Default |
         | --- | --- | --- |
-        | RESTORE_SYMBOLS  | When `YES`, IPAPatch will try to restore symbol table from Mach-O for debugging propose (with tools from https://github.com/tobefuturer/restore-symbol, also thanks to @henrayluo and @dannion) | YES |
+        | RESTORE_SYMBOLS  | When `YES`, IPAPatch will try to restore symbol table from Mach-O for debugging propose (with tools from https://github.com/tobefuturer/restore-symbol, also thanks to @henrayluo and @dannion) | NO |
         | CREATE_IPA_FILE | When `YES`, IPAPatch will generate a ipa file on each build. Genrated file is located at `SRCROOT/Product` | NO |
 
 
 7. **Code Your Patch**
 
-   The entry is at `+[IPAPatchEntry load]`, you can write code start from here. To change apps' behavior, You may need to use some method swizzling library, such as [steipete/Aspects](https://github.com/steipete/Aspects).
+   The entry is at `IPAPatchEntrySwift.enter()`. You can start writing code from there. To change an app's behavior, you may need to use a method swizzling library, such as [RuntimeKit](https://github.com/lukaskollmer/RuntimeKit).
 
 8. **Build and Run**
 
@@ -102,7 +103,7 @@ IPAPatch provide a simple way to patch iOS Apps, without needing to jailbreak.
 
 ## Example
 
-I created some demo project, which shows you how to use `IPAPatch`:
+@Naituw created some Objective-C demo projects, which shows you how to use `IPAPatch`:
 
 - Reveal + Youtube: 
   - https://github.com/Naituw/IPAPatch/releases/tag/1.0
@@ -120,7 +121,32 @@ I created some demo project, which shows you how to use `IPAPatch`:
 - Q: dyld: Symbol not found: XXX, Referenced from: XXX, Expected in: XXX/libswiftXXX.dylib
   - The swift version the framework you injecting use, is incompatible with the version of your Xcode
 
-## License
+## Licenses
+
+#### IPAPatch-Swift
+
+    IPAPatch-Swift is licensed under the MIT license.
+      
+    Copyright © 2018 Sam Foxman <rot13(fnzsbkzna320@tznvy.pbz)>.
+      
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+      
+    The above copyright notice and this permission notice shall be included in
+    all copies or substantial portions of the Software.
+      
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+    THE SOFTWARE.
+
 
 #### IPAPatch
 
@@ -128,6 +154,29 @@ I created some demo project, which shows you how to use `IPAPatch`:
       
     Copyright (c) 2017-present Wu Tian <wutian@me.com>.
       
+    Permission is hereby granted, free of charge, to any person obtaining a copy
+    of this software and associated documentation files (the "Software"), to deal
+    in the Software without restriction, including without limitation the rights
+    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+    copies of the Software, and to permit persons to whom the Software is
+    furnished to do so, subject to the following conditions:
+      
+    The above copyright notice and this permission notice shall be included in
+    all copies or substantial portions of the Software.
+      
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+    THE SOFTWARE.
+
+
+#### FlappySwift
+
+    Copyright © 2015 Nate Murray & Fullstack.io
+
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
     in the Software without restriction, including without limitation the rights
@@ -172,30 +221,3 @@ I created some demo project, which shows you how to use `IPAPatch`:
     CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
     OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
     OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-
-#### fishhook
-
-	Copyright (c) 2013, Facebook, Inc.
-	All rights reserved.
-	Redistribution and use in source and binary forms, with or without
-	modification, are permitted provided that the following conditions are met:
-	  * Redistributions of source code must retain the above copyright notice,
-	    this list of conditions and the following disclaimer.
-	  * Redistributions in binary form must reproduce the above copyright notice,
-	    this list of conditions and the following disclaimer in the documentation
-	    and/or other materials provided with the distribution.
-	  * Neither the name Facebook nor the names of its contributors may be used to
-	    endorse or promote products derived from this software without specific
-	    prior written permission.
-	THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
-	AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
-	IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-	DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
-	FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
-	DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
-	SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-	CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-	OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-	OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
