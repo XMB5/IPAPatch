@@ -230,11 +230,9 @@ rm -rf "$TARGET_APP_PATH/Watch" || true
 # 7. Update Info.plist for Target App
 
 echo "Updating BundleID:$PRODUCT_BUNDLE_IDENTIFIER, DisplayName:$TARGET_DISPLAY_NAME"
-TARGET_DISPLAY_NAME=$(/usr/libexec/PlistBuddy -c "Print CFBundleDisplayName"  "$TARGET_APP_PATH/Info.plist")
-TARGET_DISPLAY_NAME="$DUMMY_DISPLAY_NAME$TARGET_DISPLAY_NAME"
 
 /usr/libexec/PlistBuddy -c "Set :CFBundleIdentifier $PRODUCT_BUNDLE_IDENTIFIER" "$TARGET_APP_PATH/Info.plist"
-/usr/libexec/PlistBuddy -c "Set :CFBundleDisplayName $TARGET_DISPLAY_NAME" "$TARGET_APP_PATH/Info.plist"
+/usr/libexec/PlistBuddy -c "Set :CFBundleDisplayName $DUMMY_DISPLAY_NAME" "$TARGET_APP_PATH/Info.plist"
 
 
 
