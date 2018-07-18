@@ -54,7 +54,7 @@ IPAPatch-Swift provide a simple way to patch iOS Apps, without needing to jailbr
    
 2. **Prepare Decrypted IPA File**
   
-   The IPA file you use need to be decrypted, you can get a decrypted ipa from a jailbroken device or download it directly from an ipa download site, such as http://www.iphonecake.com
+   The IPA file you use need to be decrypted, you can get a decrypted ipa from a jailbroken device or download it directly from an ipa download site, such as https://www.iphonecake.com
   
 3. **Replace Placeholder IPA**
 
@@ -95,7 +95,7 @@ IPAPatch-Swift provide a simple way to patch iOS Apps, without needing to jailbr
 
 7. **Code Your Patch**
 
-   The entry is at `IPAPatchEntrySwift.enter()`. You can start writing code from there. To change an app's behavior, you may need to use a method swizzling library, such as [RuntimeKit](https://github.com/lukaskollmer/RuntimeKit).
+   The entry is at `IPAPatchEntrySwift.enter()`. You can start writing code from there. To change an app's behavior, you may need to use a method swizzling library, such as [RuntimeKit](https://github.com/lukaskollmer/RuntimeKit). To change the behavior of library functions, you can use a rebinding library, such as [fishhook](https://github.com/facebook/fishhook).
 
 8. **Build and Run**
 
@@ -112,11 +112,14 @@ IPAPatch-Swift provide a simple way to patch iOS Apps, without needing to jailbr
 
 ## FAQ
 
-- Q: Library not loaded with reason: `mach-o, but wrong architecture` ?
+- Q: Library not loaded with reason: `mach-o, but wrong architecture`
   - A: Try set `IPAPatch` target's `Valid Architectures` to match your ipa binary's architecture.
 
-- Q: process launch failed: Unspecified (Disabled) ?
-  - A: The ipa file use with IPAPatch must be decrypted, See step.2 of Instructions.
+- Q: App installation failed - This application does not support this device's CPU type.
+  - A: The ipa file uses different ARM archetectures than your device. Check [this list](https://www.innerfence.com/howto/apple-ios-devices-dates-versions-instruction-sets) to determine your device's archetecture. To determine an ipa file's archetectures, unzip it and run `$ file Payload/<app name>.app/<app name>`
+
+- Q: process launch failed: Unspecified (Disabled)
+  - A: The ipa file used with IPAPatch must be decrypted, See step.2 of Instructions.
 
 - Q: dyld: Symbol not found: XXX, Referenced from: XXX, Expected in: XXX/libswiftXXX.dylib
   - The swift version the framework you injecting use, is incompatible with the version of your Xcode
