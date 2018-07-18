@@ -23,6 +23,7 @@
 
 /* Begin PBXBuildFile section */
 		2223C27F20FFD66500CA8B9C /* IPAPatchEntrySwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2223C27E20FFD66500CA8B9C /* IPAPatchEntrySwift.swift */; };
+		2223C28120FFD7C000CA8B9C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2223C28020FFD7C000CA8B9C /* Default-568h@2x.png */; };
 		C64288391E7BF9E900C0BBB0 /* ProjectConfigurationWarning.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C64288371E7BF9E900C0BBB0 /* ProjectConfigurationWarning.cpp */; };
 		C6A353E21F51367500A9E30D /* options.plist in Resources */ = {isa = PBXBuildFile; fileRef = C6A353E11F51367500A9E30D /* options.plist */; };
 		C6B263271E7BC9DF009B4DEA /* IPAPatchEntry.h in Headers */ = {isa = PBXBuildFile; fileRef = C6B263251E7BC9DF009B4DEA /* IPAPatchEntry.h */; };
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		2223C27E20FFD66500CA8B9C /* IPAPatchEntrySwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPAPatchEntrySwift.swift; sourceTree = "<group>"; };
+		2223C28020FFD7C000CA8B9C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		C64288371E7BF9E900C0BBB0 /* ProjectConfigurationWarning.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ProjectConfigurationWarning.cpp; sourceTree = "<group>"; };
 		C64288381E7BF9E900C0BBB0 /* ProjectConfigurationWarning.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ProjectConfigurationWarning.hpp; sourceTree = "<group>"; };
 		C6A353E11F51367500A9E30D /* options.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = options.plist; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 		C6B262FD1E7BC97B009B4DEA = {
 			isa = PBXGroup;
 			children = (
+				2223C28020FFD7C000CA8B9C /* Default-568h@2x.png */,
 				C6B263091E7BC97B009B4DEA /* IPAPatch */,
 				C6B263291E7BCA86009B4DEA /* Tools */,
 				C6B2634A1E7BCB31009B4DEA /* IPAPatch-DummyApp */,
@@ -254,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6A353E21F51367500A9E30D /* options.plist in Resources */,
+				2223C28120FFD7C000CA8B9C /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
