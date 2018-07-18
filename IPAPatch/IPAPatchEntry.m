@@ -8,12 +8,13 @@
 
 #import "IPAPatchEntry.h"
 #import <UIKit/UIKit.h>
+#import "IPAPatchFramework/IPAPatchFramework-Swift.h"
 
 @implementation IPAPatchEntry
 
 + (void)load
 {
-    
+    [IPAPatchEntrySwift enter];
 }
 
 @end
