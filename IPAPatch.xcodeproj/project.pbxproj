@@ -238,8 +238,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C6B263481E7BCB31009B4DEA /* IPAPatch-DummyApp */,
 				C6B263061E7BC97B009B4DEA /* IPAPatchFramework */,
+				C6B263481E7BCB31009B4DEA /* IPAPatch-DummyApp */,
 				C6DDBB5C1F51468D00A42BE2 /* IPAPatch */,
 			);
 		};
