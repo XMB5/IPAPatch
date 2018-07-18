@@ -26,9 +26,9 @@ constexpr bool strings_equal(char const * a, char const * b) {
 #define STRINGIZE2(x) STRINGIZE(x)
 #define TARGET_BUNDLE_ID_STRING STRINGIZE2(TARGET_BUNDLE_ID)
 
-static_assert(!strings_equal(TARGET_BUNDLE_ID_STRING, "com.wutian.example"), "You Should Update  the BundleID in Build Settings before Patching");
+static_assert(!strings_equal(TARGET_BUNDLE_ID_STRING, "com.shfdev.changeme"), "You Should Update the BundleID in Build Settings before Patching");
 
-// ⚠️ Note: "com.wutian.example" is placeholder bundleID for the result app, you should change it to your own and fixes the signing issues (if any), in the "IPAPatch-DummyApp - Project - General tab"
+// ⚠️ Note: "com.shfdev.example" is placeholder bundleID for the result app, you should change it to your own and fixes the signing issues (if any), in the "IPAPatch-DummyApp - Project - General tab"
 // ⚠️ Note: The BundleDisplayName of DummyApp will used as prefix of the final name.
 
 #if TARGET_OS_SIMULATOR

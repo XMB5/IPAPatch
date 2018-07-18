@@ -216,6 +216,7 @@
 					};
 					C6B263481E7BCB31009B4DEA = {
 						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = JYSZ6243JF;
 						ProvisioningStyle = Automatic;
 					};
 					C6DDBB5C1F51468D00A42BE2 = {
@@ -495,7 +496,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = JYSZ6243JF;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -505,7 +506,7 @@
 				INFOPLIST_FILE = "IPAPatch-DummyApp/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wutian.example;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shfdev.changeme;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -519,13 +520,13 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = JYSZ6243JF;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = "TARGET_BUNDLE_ID=$(PRODUCT_BUNDLE_IDENTIFIER)";
 				INFOPLIST_FILE = "IPAPatch-DummyApp/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wutian.example;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shfdev.changeme;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
